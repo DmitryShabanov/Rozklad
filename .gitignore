@@ -1,3 +1,9 @@
 .DS_Store
 node_modules
-dist
+src
+webpack
+.babelrc
+.tern-project
+.eslintrc.json
+package.json
+README.md
