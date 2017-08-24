@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './index.scss';
 
@@ -14,11 +15,11 @@ const Search = ({ searchValue, onChangeSearch }) => (
           onChange={(e) => onChangeSearch(e.target.value)}
           placeholder="Type group name"
         />
-        <input
+        <Link
           className="search__button"
-          type="button"
-          value="search"
-        />
+          to={`/${searchValue}`}
+          onClick={() => onChangeSearch('')}
+        >search</Link>
       </div>
     </div>
   </section>

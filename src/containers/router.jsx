@@ -1,11 +1,15 @@
 import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
-import SearchContainer from './search';
+import Search from './search';
+import Group from './group';
 
 const Router = () => (
   <HashRouter>
-    <Route exact path="/" component={SearchContainer} />
+    <div>
+      <Route exact path="/" component={Search} />
+      <Route path="/:groupId" component={Group} />
+    </div>
   </HashRouter>
 );
 
