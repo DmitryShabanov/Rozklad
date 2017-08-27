@@ -34,7 +34,6 @@
 }
 
 .search__button {
-  display: block;
   float: left;
 
   box-sizing: border-box;
@@ -54,7 +53,6 @@
 
   font-family: $main-font;
   font-size: $main-font-size;
-  line-height: 40px;
 
   &:hover {
     cursor: pointer;
