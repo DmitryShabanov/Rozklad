@@ -1,33 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 
 import Search from './../components/search';
 
-import { changeSearch } from './../actions/changeSearch';
+class SearchContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { searchValue: '' };
+    this.onChangeSearch = this.onChangeSearch.bind(this);
+  }
 
-const SearchContainer = ({ searchValue, onChangeSearch }) => (
-  <Search
-    searchValue={searchValue}
-    onChangeSearch={onChangeSearch}
-  />
-);
+  onChangeSearch(value) {
+    this.setState({ searchValue: value });
+  }
 
-SearchContainer.propTypes = {
-  searchValue: PropTypes.string.isRequired,
-  onChangeSearch: PropTypes.func.isRequired,
-};
-
-function mapStateToProps(state) {
-  return {
-    searchValue: state.search,
-  };
+  render() {
+    return (
+      <Search
+        searchValue={this.state.searchValue}
+        onChangeSearch={this.onChangeSearch}
+      />
+    );
+  }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onChangeSearch: (value) => dispatch(changeSearch(value)),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
+export default SearchContainer;

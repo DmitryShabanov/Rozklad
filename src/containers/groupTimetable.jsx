@@ -15,7 +15,7 @@ class GroupTimetableContainer extends Component {
     return (
       <GroupTimetable
         groupName={this.props.groupName}
-        // groupTimetable={this.props.groupTimetable}
+        groupTimetable={this.props.groupTimetable}
       />
     );
   }
@@ -23,7 +23,7 @@ class GroupTimetableContainer extends Component {
 
 GroupTimetableContainer.propTypes = {
   groupName: PropTypes.string.isRequired,
-  // groupTimetable: PropTypes.objectOf(PropTypes.any).isRequired,
+  groupTimetable: PropTypes.objectOf(PropTypes.any).isRequired,
   onGetTimetable: PropTypes.func.isRequired,
 };
 
