@@ -5,17 +5,20 @@ import { connect } from 'react-redux';
 import Search from './../components/search';
 
 import { changeSearch } from './../actions/changeSearch';
+import { getGroupTimetable } from './../actions/getGroupTimetable';
 
-const SearchContainer = ({ searchValue, onChangeSearch }) => (
+const SearchContainer = ({ searchValue, onChangeSearch, onGetTimetable }) => (
   <Search
     searchValue={searchValue}
     onChangeSearch={onChangeSearch}
+    onGetTimetable={onGetTimetable}
   />
 );
 
 SearchContainer.propTypes = {
   searchValue: PropTypes.string.isRequired,
   onChangeSearch: PropTypes.func.isRequired,
+  onGetTimetable: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -27,6 +30,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onChangeSearch: (value) => dispatch(changeSearch(value)),
+    onGetTimetable: (groupName) => dispatch(getGroupTimetable(groupName)),
   };
 }
 

@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 import './index.scss';
 
-const Group = ({ groupId }) => (
+const GroupTimetable = ({ groupName }) => (
   <div>
-    <h1>GroupID {groupId}</h1>
+    <h1>GroupID {groupName}</h1>
     <Link to="/">back</Link>
   </div>
 );
 
-Group.propTypes = {
-  groupId: PropTypes.string.isRequired,
+GroupTimetable.propTypes = {
+  groupName: PropTypes.string.isRequired,
 };
 
-export default Group;
+export default GroupTimetable;
