@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './index.scss';
 
-const Search = ({ searchValue, onChangeSearch, onGetTimetable }) => (
+const Search = ({ searchValue, onChangeSearch }) => (
   <section className="container search">
     <div className="col-12">
       <div className="search__form">
@@ -19,7 +19,6 @@ const Search = ({ searchValue, onChangeSearch, onGetTimetable }) => (
           className="search__button"
           to={`/${searchValue}`}
           onClick={() => {
-            onGetTimetable(searchValue);
             onChangeSearch('');
           }}
         >search</Link>
@@ -31,7 +30,6 @@ const Search = ({ searchValue, onChangeSearch, onGetTimetable }) => (
 Search.propTypes = {
   searchValue: PropTypes.string.isRequired,
   onChangeSearch: PropTypes.func.isRequired,
-  onGetTimetable: PropTypes.func.isRequired,
 };
 
 export default Search;

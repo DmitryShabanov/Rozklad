@@ -1,22 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import GroupTimetable from './../components/groupTimetable';
 
-const GroupTimetableContainer = ({ groupName }) => (
-  <GroupTimetable groupName={groupName} />
-);
+import { getGroupTimetable } from './../actions/getGroupTimetable';
+
+class GroupTimetableContainer extends Component {
+  componentWillMount() {
+    this.props.onGetTimetable(this.props.groupName);
+  }
+
+  render() {
+    return (
+      <GroupTimetable
+        groupName={this.props.groupName}
+        // groupTimetable={this.props.groupTimetable}
+      />
+    );
+  }
+}
 
 GroupTimetableContainer.propTypes = {
   groupName: PropTypes.string.isRequired,
+  // groupTimetable: PropTypes.objectOf(PropTypes.any).isRequired,
+  onGetTimetable: PropTypes.func.isRequired,
 };
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   return {
-    groupName: state.groupTimetable.group.group_full_name,
+    groupName: ownProps.match.params.groupName,
     groupTimetable: state.groupTimetable,
   };
 }
 
-export default connect(mapStateToProps)(GroupTimetableContainer);
+function mapDispatchToProps(dispatch) {
+  return {
+    onGetTimetable: (groupName) => dispatch(getGroupTimetable(groupName)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GroupTimetableContainer);

@@ -8,7 +8,7 @@ function loadTimetable(data) {
 }
 
 export const getGroupTimetable = (groupName) => (dispatch) => {
-  fetch(`http://api.rozklad.org.ua/v2/groups/${groupName}/timetable`)
+  fetch(`https://api.rozklad.org.ua/v2/groups/${groupName}/timetable`)
     .then((response) => response.json())
     .then((result) => {
       if (result.statusCode === 200) {
