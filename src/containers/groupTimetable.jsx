@@ -7,14 +7,13 @@ import GroupTimetable from './../components/groupTimetable';
 import { getGroupTimetable } from './../actions/getGroupTimetable';
 
 class GroupTimetableContainer extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.onGetTimetable(this.props.groupName);
   }
 
   render() {
     return (
       <GroupTimetable
-        groupName={this.props.groupName}
         groupTimetable={this.props.groupTimetable}
       />
     );
@@ -22,15 +21,15 @@ class GroupTimetableContainer extends Component {
 }
 
 GroupTimetableContainer.propTypes = {
-  groupName: PropTypes.string.isRequired,
   groupTimetable: PropTypes.objectOf(PropTypes.any).isRequired,
+  groupName: PropTypes.string.isRequired,
   onGetTimetable: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state, ownProps) {
   return {
-    groupName: ownProps.match.params.groupName,
     groupTimetable: state.groupTimetable,
+    groupName: ownProps.match.params.groupName,
   };
 }
 

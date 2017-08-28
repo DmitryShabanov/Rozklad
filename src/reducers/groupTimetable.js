@@ -1,9 +1,12 @@
 import { GET_GROUP_TIMETABLE } from './../actions/getGroupTimetable';
 
-export default function groupTimetable(state = {}, action) {
+export default function groupTimetable(state = { isLoaded: false }, action) {
   switch (action.type) {
     case GET_GROUP_TIMETABLE:
-      return action.data;
+      return {
+        isLoaded: true,
+        data: action.data,
+      };
     default:
       return state;
   }

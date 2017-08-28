@@ -4,17 +4,21 @@ import { Link } from 'react-router-dom';
 
 import './index.scss';
 
-const GroupTimetable = ({ groupName }) => (
-  <div>
-    <h1>Group name: {groupName}</h1>
-    <Link to="/">back</Link>
-    {/* <div>{groupTimetable.group.group_id}</div> */}
-  </div>
-);
+const GroupTimetable = ({ groupTimetable }) => {
+  let result = null;
+  if (groupTimetable.isLoaded) {
+    result = (
+      <div>
+        <h1>Group Name: {groupTimetable.data.group.group_full_name}</h1>
+        <Link to="/">back</Link>
+      </div>
+    );
+  }
+  return result;
+};
 
 GroupTimetable.propTypes = {
-  groupName: PropTypes.string.isRequired,
-  // groupTimetable: PropTypes.objectOf(PropTypes.any).isRequired,
+  groupTimetable: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default GroupTimetable;
