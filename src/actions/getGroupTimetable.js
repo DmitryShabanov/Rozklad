@@ -1,3 +1,5 @@
+import { changeLoaded } from './changeLoaded';
+
 export const GET_GROUP_TIMETABLE = 'GET_GROUP_TIMETABLE';
 
 function loadTimetable(data) {
@@ -13,9 +15,10 @@ export const getGroupTimetable = (groupName) => (dispatch) => {
     .then((result) => {
       if (result.statusCode === 200) {
         dispatch(loadTimetable(result.data));
+        dispatch(changeLoaded(true));
       } else {
         throw new Error();
       }
     })
-    .catch(() => dispatch(loadTimetable('ERROR')));
+    .catch(() => {});
 };
