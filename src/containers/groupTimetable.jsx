@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import GroupTimetable from './../components/groupTimetable';
@@ -21,7 +20,7 @@ class GroupTimetableContainer extends Component {
     if (this.props.loaded) {
       result = (
         <GroupTimetable
-          groupTimetable={this.props.groupTimetable}
+          data={this.props.data}
         />
       );
     }
@@ -29,18 +28,10 @@ class GroupTimetableContainer extends Component {
   }
 }
 
-GroupTimetableContainer.propTypes = {
-  groupTimetable: PropTypes.objectOf(PropTypes.any).isRequired,
-  groupName: PropTypes.string.isRequired,
-  loaded: PropTypes.bool.isRequired,
-  onGetTimetable: PropTypes.func.isRequired,
-  onResetGroupTimetable: PropTypes.func.isRequired,
-};
-
 function mapStateToProps(state, ownProps) {
   return {
-    groupTimetable: state.groupTimetable,
     groupName: ownProps.match.params.groupName,
+    data: state.groupTimetable,
     loaded: state.loaded,
   };
 }
