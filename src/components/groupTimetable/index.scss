@@ -8,7 +8,7 @@
   letter-spacing: $font-spacing;
 
   color: $dark-grey;
-  text-shadow: 2px 2px $hover-grey;
+  text-shadow: 3px 2px $hover-grey;
 
   font-family: $main-font-family;
   font-size: $header-font;
@@ -16,26 +16,31 @@
 }
 
 .group__week-title {
-  margin-top: 30px;
+  display: block;
+
+  width: 780px;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding: 5px 0;
 
   text-align: center;
 
   color: $dark-grey;
-  text-shadow: 2px 2px $hover-grey;
+  border-radius: 3px;
+  background-color: $hover-grey;
 
   font-family: $main-font-family;
   font-size: $title-font;
 }
 
 .group__week {
-  margin-top: 15px;
-
   @extend %clear;
 }
 
 .group__back {
   display: block;
 
+  box-sizing: border-box;
   width: 110px;
   height: 26px;
   margin: 25px auto;

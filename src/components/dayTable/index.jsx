@@ -14,15 +14,16 @@ const DayTable = (props) => (
           <p className="day__time-item">{lesson.time_end}</p>
         </div>
         <div className="day__lesson-info">
-          <p>{lesson.lesson_name}</p>
-          <p>{lesson.teacher_name}</p>
+          <p className="day__lesson_name">{lesson.lesson_name}</p>
+          <p className="day__lesson_teacher">{lesson.teacher_name}</p>
         </div>
-        <div className="day__lesson-type">
-          <p>{lesson.lesson_type}</p>
-          <p>{lesson.lesson_room}</p>
+        <div className="day__lesson-place">
+          <p className="day__lesson-type">{lesson.lesson_type}</p>
+          <p className="day__lesson-room">{lesson.lesson_room}</p>
         </div>
       </div>
     ))}
+    <div className="day__end" />
   </div>
 );
 

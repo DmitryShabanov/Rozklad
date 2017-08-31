@@ -27,9 +27,13 @@ const GroupTimetable = ({ data }) => {
   return (
     <section className="container group">
       <h1 className="col-12 group__title">Timetable for group {groupName}</h1>
-      <h2 className="col-12 group__week-title">First week</h2>
+      <div className="col-12">
+        <h2 className="group__week-title">First week</h2>
+      </div>
       {getTimetable(firstWeek)}
-      <h2 className="col-12 group__week-title">Second week</h2>
+      <div className="col-12">
+        <h2 className="group__week-title">Second week</h2>
+      </div>
       {getTimetable(secondWeek)}
       <div className="col-12"><Link className="group__back" to="/">back</Link></div>
     </section>

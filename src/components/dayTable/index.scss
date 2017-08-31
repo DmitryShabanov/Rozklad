@@ -6,17 +6,22 @@
 }
 
 .day__name {
+  margin-bottom: 10px;
+
   text-align: center;
   letter-spacing: $font-spacing;
 
   color: $dark-grey;
+  text-shadow: 2px 2px $hover-grey;
 
   font-family: $main-font-family;
   font-size: $large-font;
 }
 
 .day__lesson {
-  margin-top: 10px;
+  width: 780px;
+  margin: 0 auto;
+  margin-bottom: 5px;
 
   color: $dark-grey;
 
@@ -28,20 +33,98 @@
 
 .day__lesson-number {
   float: left;
+
   width: 60px;
   height: 50px;
-  line-height: 50px;
+
   text-align: center;
+
+  line-height: 50px;
 }
 
 .day__lesson-time {
   float: left;
+
+  width: 80px;
   height: 50px;
 }
 
 .day__time-item {
   height: 25px;
-  line-height: 25px;
-  width: 80px;
+
   text-align: center;
+
+  line-height: 25px;
+}
+
+.day__lesson-info {
+  float: left;
+
+  width: 500px;
+  height: 50px;
+}
+
+.day__lesson_name {
+  overflow: hidden;
+
+  height: 30px;
+  padding: 0 20px;
+
+  text-align: center;
+  letter-spacing: $font-spacing;
+
+  font-size: $medium-font;
+  line-height: 30px;
+}
+
+.day__lesson_teacher {
+  overflow: hidden;
+
+  height: 20px;
+  padding: 0 20px;
+
+  text-align: center;
+
+  line-height: 20px;
+}
+
+.day__lesson-place {
+  float: left;
+
+  width: 140px;
+  height: 50px;
+
+  @extend %clear;
+}
+
+.day__lesson-type {
+  float: left;
+
+  width: 40px;
+  height: 50px;
+
+  text-align: center;
+
+  line-height: 50px;
+}
+
+.day__lesson-room {
+  float: left;
+
+  width: 100px;
+  height: 50px;
+
+  text-align: center;
+
+  line-height: 50px;
+}
+
+.day__end {
+  box-sizing: border-box;
+  width: 180px;
+  margin: 0 auto;
+  margin-top: 5px;
+
+  border: 1px solid $light-grey;
+  border-radius: 3px;
 }
