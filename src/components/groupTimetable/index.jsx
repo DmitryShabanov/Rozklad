@@ -12,7 +12,7 @@ function getTimetable(week) {
       {week.map((day) => (
         <DayTable
           key={day.day_number}
-          name={day.day_name}
+          dayName={day.day_name}
           lessons={day.lessons}
         />
       ))}

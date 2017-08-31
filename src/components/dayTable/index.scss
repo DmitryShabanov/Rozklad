@@ -1,1 +1,47 @@
 @import '../../styles/base/variables';
+@import '../../styles/base/clear';
+
+.day {
+  margin-top: 20px;
+}
+
+.day__name {
+  text-align: center;
+  letter-spacing: $font-spacing;
+
+  color: $dark-grey;
+
+  font-family: $main-font-family;
+  font-size: $large-font;
+}
+
+.day__lesson {
+  margin-top: 10px;
+
+  color: $dark-grey;
+
+  font-family: $main-font-family;
+  font-size: $small-font;
+
+  @extend %clear;
+}
+
+.day__lesson-number {
+  float: left;
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.day__lesson-time {
+  float: left;
+  height: 50px;
+}
+
+.day__time-item {
+  height: 25px;
+  line-height: 25px;
+  width: 80px;
+  text-align: center;
+}

@@ -4,24 +4,30 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const DayTable = (props) => (
-  <div>
-    {props.name}
+  <div className="day">
+    <p className="day__name">{props.dayName}</p>
     {props.lessons.map((lesson) => (
-      <div key={lesson.lesson_id}>
-        <div>{lesson.lesson_number}</div>
-        <div>{lesson.time_start}</div>
-        <div>{lesson.time_end}</div>
-        <div>{lesson.lesson_name}</div>
-        <div>{lesson.lesson_type}</div>
-        <div>{lesson.lesson_room}</div>
-        <div>{lesson.teacher_name}</div>
+      <div className="day__lesson" key={lesson.lesson_id}>
+        <div className="day__lesson-number">{lesson.lesson_number} пара</div>
+        <div className="day__lesson-time">
+          <p className="day__time-item">{lesson.time_start}</p>
+          <p className="day__time-item">{lesson.time_end}</p>
+        </div>
+        <div className="day__lesson-info">
+          <p>{lesson.lesson_name}</p>
+          <p>{lesson.teacher_name}</p>
+        </div>
+        <div className="day__lesson-type">
+          <p>{lesson.lesson_type}</p>
+          <p>{lesson.lesson_room}</p>
+        </div>
       </div>
     ))}
   </div>
 );
 
 DayTable.propTypes = {
-  name: PropTypes.string.isRequired,
+  dayName: PropTypes.string.isRequired,
   lessons: PropTypes.arrayOf(
     PropTypes.shape({
       lesson_id: PropTypes.string.isRequired,

@@ -36,8 +36,8 @@
 .group__back {
   display: block;
 
-  width: 140px;
-  height: 30px;
+  width: 110px;
+  height: 26px;
   margin: 25px auto;
 
   transition: .25s;
@@ -49,8 +49,8 @@
   border-radius: 3px;
 
   font-family: $main-font-family;
-  font-size: $little-font;
-  line-height: 30px;
+  font-size: $small-font;
+  line-height: 26px;
 
   &:hover {
     border-radius: 3px;
