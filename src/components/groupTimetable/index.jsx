@@ -8,7 +8,7 @@ import './index.scss';
 
 function getTimetable(week) {
   return (
-    <div className="col-12">
+    <div className="col-12 group__week">
       {week.map((day) => (
         <DayTable
           key={day.day_number}
@@ -26,12 +26,12 @@ const GroupTimetable = ({ data }) => {
   const secondWeek = Object.values(data.weeks[2].days);
   return (
     <section className="container group">
-      <h1 className="col-12 group__title">Розклад групи {groupName}</h1>
-      <h2 className="col-12">Перша неділя</h2>
+      <h1 className="col-12 group__title">Timetable for group {groupName}</h1>
+      <h2 className="col-12 group__week-title">First week</h2>
       {getTimetable(firstWeek)}
-      <h2 className="col-12">Друга неділя</h2>
+      <h2 className="col-12 group__week-title">Second week</h2>
       {getTimetable(secondWeek)}
-      <div className="col-12 group__back"><Link to="/">back</Link></div>
+      <div className="col-12"><Link className="group__back" to="/">back</Link></div>
     </section>
   );
 };

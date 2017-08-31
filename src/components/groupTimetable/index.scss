@@ -1,1 +1,59 @@
 @import '../../styles/base/variables';
+@import '../../styles/base/clear';
+
+.group__title {
+  margin-top: 45px;
+
+  text-align: center;
+  letter-spacing: $font-spacing;
+
+  color: $dark-grey;
+  text-shadow: 2px 2px $hover-grey;
+
+  font-family: $main-font-family;
+  font-size: $header-font;
+  font-weight: 700;
+}
+
+.group__week-title {
+  margin-top: 30px;
+
+  text-align: center;
+
+  color: $dark-grey;
+  text-shadow: 2px 2px $hover-grey;
+
+  font-family: $main-font-family;
+  font-size: $title-font;
+}
+
+.group__week {
+  margin-top: 15px;
+
+  @extend %clear;
+}
+
+.group__back {
+  display: block;
+
+  width: 140px;
+  height: 30px;
+  margin: 25px auto;
+
+  transition: .25s;
+  text-align: center;
+  text-decoration: none;
+
+  color: $dark-grey;
+  border: 1px solid $light-grey;
+  border-radius: 3px;
+
+  font-family: $main-font-family;
+  font-size: $little-font;
+  line-height: 30px;
+
+  &:hover {
+    border-radius: 3px;
+    background-color: $hover-grey;
+  }
+}

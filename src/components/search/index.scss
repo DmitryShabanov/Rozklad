@@ -25,8 +25,8 @@
   border-radius: 3px;
   outline: none;
 
-  font-family: $main-font;
-  font-size: $main-font-size;
+  font-family: $main-font-family;
+  font-size: $medium-font;
 
   &::placeholder {
     color: $light-grey;
@@ -51,8 +51,8 @@
   outline: none;
   background-color: #fff;
 
-  font-family: $main-font;
-  font-size: $main-font-size;
+  font-family: $main-font-family;
+  font-size: $medium-font;
 
   &:hover {
     cursor: pointer;

@@ -1,6 +1,8 @@
-@import "clear";
+@import 'clear';
 
 .container {
+  display: block;
+
   box-sizing: border-box;
   width: $breakpoint-mobile-portrait;
   margin: 0 auto;
@@ -30,8 +32,7 @@
 
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
-    position: relative;
-
+    display: block;
     float: left;
 
     box-sizing: border-box;
