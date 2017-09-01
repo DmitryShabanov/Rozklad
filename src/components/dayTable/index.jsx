@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const DayTable = (props) => (
-  <div className="day">
+  <div className={`day ${(props.current) ? 'day_current' : ''}`}>
     <p className="day__name">{props.dayName}</p>
     {props.lessons.map((lesson) => (
       <div className="day__lesson" key={lesson.lesson_id}>
         <div className="day__lesson-number">{lesson.lesson_number} пара</div>
         <div className="day__lesson-time">
-          <p className="day__time-item">{lesson.time_start}</p>
-          <p className="day__time-item">{lesson.time_end}</p>
+          <p className="day__time-item">{lesson.time_start.slice(0, 5)}</p>
+          <p className="day__time-item">{lesson.time_end.slice(0, 5)}</p>
         </div>
         <div className="day__lesson-info">
           <p className="day__lesson_name">{lesson.lesson_name}</p>

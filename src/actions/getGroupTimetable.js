@@ -1,4 +1,5 @@
 import { changeLoaded } from './changeLoaded';
+import { getCurrentWeek } from './getCurrentWeek';
 
 export const GET_GROUP_TIMETABLE = 'GET_GROUP_TIMETABLE';
 
@@ -14,6 +15,7 @@ export const getGroupTimetable = (groupName) => (dispatch) => {
     .then((response) => response.json())
     .then((result) => {
       if (result.statusCode === 200) {
+        dispatch(getCurrentWeek());
         dispatch(loadTimetable(result.data));
         dispatch(changeLoaded(true));
       } else {

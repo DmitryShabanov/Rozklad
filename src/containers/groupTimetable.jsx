@@ -21,6 +21,7 @@ class GroupTimetableContainer extends Component {
       result = (
         <GroupTimetable
           data={this.props.data}
+          currentWeek={this.props.currentWeek}
         />
       );
     }
@@ -33,6 +34,7 @@ function mapStateToProps(state, ownProps) {
     groupName: ownProps.match.params.groupName,
     data: state.groupTimetable,
     loaded: state.loaded,
+    currentWeek: state.currentWeek,
   };
 }
 
