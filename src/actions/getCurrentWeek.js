@@ -8,7 +8,7 @@ function getWeekNumber(data) {
 }
 
 export const getCurrentWeek = () => (dispatch) => {
-  fetch('http://api.rozklad.org.ua/v2/weeks')
+  fetch('https://api.rozklad.org.ua/v2/weeks')
     .then((response) => response.json())
     .then((result) => {
       if (result.statusCode === 200) {
