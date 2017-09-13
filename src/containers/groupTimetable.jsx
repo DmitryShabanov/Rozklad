@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import GroupTimetable from './../components/groupTimetable';
+import Spinner from './../components/spinner';
 
 import { getGroupTimetable } from './../actions/getGroupTimetable';
 import { resetGroupTimetable } from './../actions/resetGroupTimetable';
@@ -17,7 +18,14 @@ class GroupTimetableContainer extends Component {
 
   render() {
     let result = null;
-    if (this.props.loaded) {
+
+    if (!this.props.loaded) {
+      result = (
+        <div>
+          <Spinner />
+        </div>
+      );
+    } else {
       result = (
         <GroupTimetable
           data={this.props.data}
@@ -25,6 +33,7 @@ class GroupTimetableContainer extends Component {
         />
       );
     }
+
     return result;
   }
 }

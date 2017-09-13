@@ -1,0 +1,31 @@
+.spinner {
+  position: relative;
+
+  height: 100vh;
+}
+
+.spinner__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 120px;
+  height: 120px;
+  margin: auto;
+
+  animation: spin 2s linear infinite;
+
+  background-image: url(../../images/spinner.svg);
+  background-size: cover;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
