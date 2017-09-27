@@ -2,7 +2,11 @@
 @import '../../styles/base/clear';
 
 .search {
-  margin-top: 80px;
+  margin-top: calc((100vh / 2) - 40px);
+
+  @media screen and (max-width: 375px) {
+    margin-top: 0;
+  }
 }
 
 .search__form {
@@ -10,6 +14,11 @@
   margin: 0 auto;
 
   @extend %clear;
+
+  @media screen and (max-width: 375px) {
+    width: auto;
+    margin: auto;
+  }
 }
 
 .search__field {
@@ -30,6 +39,16 @@
 
   &::placeholder {
     color: $light-grey;
+  }
+
+  @media screen and (max-width: 375px) {
+    display: block;
+    float: none;
+
+    width: 100%;
+    margin: 0 auto;
+    margin-top: calc((100vh / 2) - 80px);
+    margin-bottom: 20px;
   }
 }
 
@@ -58,6 +77,18 @@
     cursor: pointer;
 
     border-radius: 3px;
+    background-color: $hover-grey;
+  }
+
+  @media screen and (max-width: 375px) {
+    display: block;
+    float: none;
+
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    border-radius: 25px;
     background-color: $hover-grey;
   }
 }
