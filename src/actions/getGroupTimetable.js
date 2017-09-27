@@ -12,15 +12,16 @@ function loadTimetable(data) {
 
 export const getGroupTimetable = (groupName) => (dispatch) => {
   fetch(`https://api.rozklad.org.ua/v2/groups/${groupName}/timetable`)
-    .then((response) => response.json())
-    .then((result) => {
-      if (result.statusCode === 200) {
-        dispatch(getCurrentWeek());
-        dispatch(loadTimetable(result.data));
-        dispatch(changeLoaded(true));
-      } else {
-        throw new Error();
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
       }
+      return null;
+    })
+    .then((result) => {
+      dispatch(getCurrentWeek());
+      dispatch(loadTimetable(result.data));
+      dispatch(changeLoaded(true));
     })
     .catch(() => {});
 };
