@@ -5,11 +5,24 @@
   width: 780px;
   margin: 0 auto;
   margin-top: 20px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    width: 100%;
+
+    border: 1px solid $shadow-grey;
+    border-radius: 3px;
+    background: $lightest-grey;
+    box-shadow: 2px 2px 5px $shadow-grey;
+  }
 }
 
 .day_current {
   border-radius: 3px;
-  background-color: $hover-grey;
+  background-color: $orange;
+
+  & .day__name {
+    text-shadow: none;
+  }
 }
 
 .day__name {
@@ -24,6 +37,14 @@
 
   font-family: $main-font-family;
   font-size: $large-font;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    margin-bottom: 10px;
+
+    text-shadow: none;
+
+    font-size: $mobile-large-font;
+  }
 }
 
 .day__lesson {
@@ -35,6 +56,19 @@
   font-size: $small-font;
 
   @extend %clear;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    margin-bottom: 20px;
+
+    &:after {
+      width: calc(100% - 80px);
+      height: 1px;
+      margin: 0 auto;
+      margin-top: 10px;
+
+      background-color: $shadow-grey;
+    }
+  }
 }
 
 .day__lesson-number {
@@ -46,6 +80,18 @@
   text-align: center;
 
   line-height: 50px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    float: none;
+
+    width: 100%;
+    height: auto;
+
+    text-decoration: underline;
+
+    font-weight: 700;
+    line-height: normal;
+  }
 }
 
 .day__lesson-time {
@@ -53,6 +99,18 @@
 
   width: 80px;
   height: 50px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    float: none;
+
+    box-sizing: border-box;
+    width: calc(100% - 80px);
+    height: auto;
+    margin: 0 auto;
+    margin-top: 5px;
+
+    border: 1px solid $shadow-grey;
+  }
 }
 
 .day__time-item {
@@ -61,6 +119,20 @@
   text-align: center;
 
   line-height: 25px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: 50%;
+    height: auto;
+
+    line-height: normal;
+
+    &:nth-child(1) {
+      border-right: 1px solid $shadow-grey;
+    }
+  }
 }
 
 .day__lesson-info {
@@ -68,6 +140,14 @@
 
   width: 500px;
   height: 50px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    float: none;
+
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+  }
 }
 
 .day__lesson_name {
@@ -81,6 +161,13 @@
 
   font-size: $medium-font;
   line-height: 30px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    height: auto;
+
+    font-size: $mobile-medium-font;
+    line-height: normal;
+  }
 }
 
 .day__lesson_teacher {
@@ -92,6 +179,12 @@
   text-align: center;
 
   line-height: 20px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    height: auto;
+
+    line-height: normal;
+  }
 }
 
 .day__lesson-place {
@@ -101,6 +194,16 @@
   height: 50px;
 
   @extend %clear;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    float: none;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding: 0 100px;
+  }
 }
 
 .day__lesson-type {
@@ -112,6 +215,16 @@
   text-align: center;
 
   line-height: 50px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    display: inline-block;
+    float: none;
+
+    width: 50%;
+    height: auto;
+
+    line-height: normal;
+  }
 }
 
 .day__lesson-room {
@@ -123,6 +236,16 @@
   text-align: center;
 
   line-height: 50px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    display: inline-block;
+    float: none;
+
+    width: 50%;
+    height: auto;
+
+    line-height: normal;
+  }
 }
 
 .day__end {
@@ -133,4 +256,8 @@
 
   border: 1px solid $light-grey;
   border-radius: 3px;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    display: none;
+  }
 }

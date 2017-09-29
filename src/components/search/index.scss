@@ -4,7 +4,7 @@
 .search {
   margin-top: calc((100vh / 2) - 40px);
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $breakpoint-tablet - 1) {
     margin-top: 0;
   }
 }
@@ -15,7 +15,7 @@
 
   @extend %clear;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $breakpoint-tablet - 1) {
     width: auto;
     margin: auto;
   }
@@ -41,7 +41,7 @@
     color: $light-grey;
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $breakpoint-tablet - 1) {
     display: block;
     float: none;
 
@@ -80,7 +80,7 @@
     background-color: $hover-grey;
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $breakpoint-tablet - 1) {
     display: block;
     float: none;
 
@@ -90,5 +90,9 @@
 
     border-radius: 25px;
     background-color: $hover-grey;
+
+    &:hover {
+      border-radius: 25px;
+    }
   }
 }

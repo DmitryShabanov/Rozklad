@@ -13,6 +13,10 @@
   font-family: $main-font-family;
   font-size: $header-font;
   font-weight: 700;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    font-size: $mobile-header-font;
+  }
 }
 
 .group__week-title {
@@ -32,6 +36,17 @@
 
   font-family: $main-font-family;
   font-size: $title-font;
+
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    width: 100%;
+    margin-top: 25px;
+
+    text-decoration: underline;
+
+    border: none;
+
+    font-size: $mobile-title-font;
+  }
 }
 
 .group__week {
@@ -39,27 +54,23 @@
 }
 
 .group__back {
-  display: block;
+  display: inline-block;
 
-  box-sizing: border-box;
-  width: 110px;
-  height: 26px;
+  width: 100%;
   margin: 25px auto;
 
   transition: .25s;
   text-align: center;
-  text-decoration: none;
+  text-decoration: underline;
+  letter-spacing: .25em;
+  text-transform: uppercase;
 
   color: $dark-grey;
-  border: 1px solid $light-grey;
-  border-radius: 3px;
 
   font-family: $main-font-family;
   font-size: $small-font;
-  line-height: 26px;
 
   &:hover {
-    border-radius: 3px;
-    background-color: $hover-grey;
+    color: $light-grey;
   }
 }

@@ -1,11 +1,10 @@
-$breakpoint-desktop-large: 1170px;
-$breakpoint-desktop: 960px;
+$breakpoint-desktop: 1100px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile-landscape: 480px;
-$breakpoint-mobile-portrait: 320px;
+$breakpoint-mobile: 320px;
 
 $grid-columns: 12;
-$grid-gutter: 15px;
+$grid-gutter: 10px;
 
 $main-font-family: 'Lato', sans-serif;
 $font-spacing: .025em;
@@ -16,6 +15,15 @@ $large-font: 22px;
 $medium-font: 18px;
 $small-font: 14px;
 
+$mobile-header-font: 28px;
+$mobile-title-font: 24px;
+$mobile-large-font: 18px;
+$mobile-medium-font: 16px;
+$mobile-small-font: 14px;
+
+$lightest-grey: #f8f8f8;
 $light-grey: #888;
 $dark-grey: #676767;
 $hover-grey: #eee;
+$orange: #ffe0b3;
+$shadow-grey: #aaa;
