@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const DayTable = (props) => (
-  <div className={`day ${(props.current) ? 'day_current' : ''}`}>
+  <div className={`day ${(props.current) ? 'day_current' : ''} ${(props.next) ? 'day_next' : ''}`}>
     <p className="day__name">{props.dayName}</p>
     {props.lessons.map((lesson) => (
       <div className="day__lesson" key={lesson.lesson_id}>

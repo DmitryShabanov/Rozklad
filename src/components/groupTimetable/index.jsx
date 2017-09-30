@@ -6,32 +6,31 @@ import DayTable from './../dayTable';
 
 import './index.scss';
 
-function getTimetable(week, isCurrent) {
+let inWeek;
+let nextDay;
+
+function getTimetable(week, isCurrent, weekNumber) {
   let currentDay = -1;
   if (isCurrent) {
     currentDay = new Date().getDay();
+    if (currentDay > 0 && currentDay < 6) {
+      nextDay = currentDay + 1;
+      inWeek = weekNumber;
+    } else {
+      nextDay = 1;
+      inWeek = (weekNumber === 1) ? 2 : 1;
+    }
   }
   return (
     <div className="col-12 group__week">
-      {week.map((day) => {
-        if (day.day_number === currentDay) {
-          return (
-            <DayTable
-              key={day.day_number}
-              dayName={day.day_name}
-              lessons={day.lessons}
-              current
-            />
-          );
-        }
-        return (
-          <DayTable
-            key={day.day_number}
-            dayName={day.day_name}
-            lessons={day.lessons}
-          />
-        );
-      })}
+      {week.map((day) => (
+        <DayTable
+          key={day.day_number}
+          dayName={day.day_name}
+          lessons={day.lessons}
+          current={(day.day_number === currentDay)}
+          next={(weekNumber === inWeek && day.day_number === nextDay)}
+        />))}
     </div>
   );
 }
@@ -46,11 +45,11 @@ const GroupTimetable = ({ data, currentWeek }) => {
       <div className="col-12">
         <h2 className="group__week-title">First week</h2>
       </div>
-      {getTimetable(firstWeek, (currentWeek === 1))}
+      {getTimetable(firstWeek, (currentWeek === 1), 1)}
       <div className="col-12">
         <h2 className="group__week-title">Second week</h2>
       </div>
-      {getTimetable(secondWeek, (currentWeek === 2))}
+      {getTimetable(secondWeek, (currentWeek === 2), 2)}
       <div className="col-12"><Link className="group__back" to="/">back</Link></div>
     </section>
   );

@@ -25,6 +25,15 @@
   }
 }
 
+.day_next {
+  border-radius: 3px;
+  background-color: $green;
+
+  & .day__name {
+    text-shadow: none;
+  }
+}
+
 .day__name {
   margin-bottom: 5px;
   padding-top: 10px;
