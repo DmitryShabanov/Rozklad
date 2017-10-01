@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 
 import GroupTimetable from './../components/groupTimetable';
 import Spinner from './../components/spinner';
+import NotFound from './../components/notFound';
 
 import { getGroupTimetable } from './../actions/getGroupTimetable';
 import { resetGroupTimetable } from './../actions/resetGroupTimetable';
+import { changeNotFound } from './../actions/changeNotFound';
 
 class GroupTimetableContainer extends Component {
   componentDidMount() {
@@ -14,17 +16,17 @@ class GroupTimetableContainer extends Component {
 
   componentWillUnmount() {
     this.props.onResetGroupTimetable();
+    this.props.onChangeNotFound();
   }
 
   render() {
     let result = null;
 
     if (!this.props.loaded) {
-      result = (
-        <div>
-          <Spinner />
-        </div>
-      );
+      result = <Spinner />;
+      if (this.props.isNotFound) {
+        result = <NotFound />;
+      }
     } else {
       result = (
         <GroupTimetable
@@ -44,6 +46,7 @@ function mapStateToProps(state, ownProps) {
     data: state.groupTimetable,
     loaded: state.loaded,
     currentWeek: state.currentWeek,
+    isNotFound: state.isNotFound,
   };
 }
 
@@ -51,6 +54,7 @@ function mapDispatchToProps(dispatch) {
   return {
     onGetTimetable: (groupName) => dispatch(getGroupTimetable(groupName)),
     onResetGroupTimetable: () => dispatch(resetGroupTimetable()),
+    onChangeNotFound: () => dispatch(changeNotFound(false)),
   };
 }
 

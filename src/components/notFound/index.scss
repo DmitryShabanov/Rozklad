@@ -1,0 +1,22 @@
+@import '../../styles/base/variables';
+
+.not-found__image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  margin-top: calc(100vh / 2 - 89px);
+
+  background-image: url(../../images/error.svg);
+  background-size: cover;
+}
+
+
+.not-found__text {
+  text-align: center;
+  letter-spacing: $font-spacing;
+
+  color: $light-grey;
+
+  font-family: $main-font-family;
+  font-size: $title-font;
+}

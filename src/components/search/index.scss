@@ -2,7 +2,7 @@
 @import '../../styles/base/clear';
 
 .search {
-  margin-top: calc((100vh / 2) - 40px);
+  margin-top: calc((100vh / 2) - 20px);
 
   @media screen and (max-width: $breakpoint-tablet - 1) {
     margin-top: 0;
@@ -47,7 +47,7 @@
 
     width: 100%;
     margin: 0 auto;
-    margin-top: calc((100vh / 2) - 80px);
+    margin-top: calc((100vh / 2) - 50px);
     margin-bottom: 20px;
   }
 }
