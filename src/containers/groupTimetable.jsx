@@ -10,8 +10,16 @@ import { resetGroupTimetable } from './../actions/resetGroupTimetable';
 import { changeNotFound } from './../actions/changeNotFound';
 
 class GroupTimetableContainer extends Component {
+
   componentDidMount() {
     this.props.onGetTimetable(this.props.groupName);
+    setTimeout(() => {
+      let element = document.getElementsByClassName('day_current')[0];
+      if (!element) {
+        element = document.getElementsByClassName('day_next')[0];
+      }
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
   }
 
   componentWillUnmount() {
