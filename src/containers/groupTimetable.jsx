@@ -19,7 +19,7 @@ class GroupTimetableContainer extends Component {
         element = document.getElementsByClassName('day_next')[0];
       }
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 300);
+    }, 500);
   }
 
   componentWillUnmount() {
