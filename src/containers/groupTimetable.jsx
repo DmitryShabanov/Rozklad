@@ -13,13 +13,6 @@ class GroupTimetableContainer extends Component {
 
   componentDidMount() {
     this.props.onGetTimetable(this.props.groupName);
-    setTimeout(() => {
-      let element = document.getElementsByClassName('day_current')[0];
-      if (!element) {
-        element = document.getElementsByClassName('day_next')[0];
-      }
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 500);
   }
 
   componentWillUnmount() {
@@ -30,18 +23,18 @@ class GroupTimetableContainer extends Component {
   render() {
     let result = null;
 
-    if (!this.props.loaded) {
-      result = <Spinner />;
-      if (this.props.isNotFound) {
-        result = <NotFound />;
-      }
-    } else {
+    if (this.props.data && this.props.currentWeek) {
       result = (
         <GroupTimetable
           data={this.props.data}
           currentWeek={this.props.currentWeek}
         />
       );
+    } else {
+      result = <Spinner />;
+      if (this.props.isNotFound) {
+        result = <NotFound />;
+      }
     }
 
     return result;
@@ -52,7 +45,6 @@ function mapStateToProps(state, ownProps) {
   return {
     groupName: ownProps.match.params.groupName,
     data: state.groupTimetable,
-    loaded: state.loaded,
     currentWeek: state.currentWeek,
     isNotFound: state.isNotFound,
   };

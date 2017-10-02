@@ -1,4 +1,3 @@
-import { changeLoaded } from './changeLoaded';
 import { getCurrentWeek } from './getCurrentWeek';
 import { changeNotFound } from './changeNotFound';
 
@@ -22,7 +21,6 @@ export const getGroupTimetable = (groupName) => (dispatch) => {
     .then((result) => {
       dispatch(getCurrentWeek());
       dispatch(loadTimetable(result.data));
-      dispatch(changeLoaded(true));
     })
     .catch(() => dispatch(changeNotFound(true)));
 };

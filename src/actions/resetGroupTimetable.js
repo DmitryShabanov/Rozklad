@@ -1,5 +1,3 @@
-import { changeLoaded } from './changeLoaded';
-
 export const RESETE_GROUP_TIMETABLE = 'RESETE_GROUP_TIMETABLE';
 
 function resetData() {
@@ -10,5 +8,4 @@ function resetData() {
 
 export const resetGroupTimetable = () => (dispatch) => {
   dispatch(resetData());
-  dispatch(changeLoaded(false));
 };
