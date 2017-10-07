@@ -10,14 +10,14 @@
     width: 100%;
 
     border: 1px solid $shadow-grey;
-    border-radius: 10px;
+    border-radius: 5px;
     background: $lightest-grey;
     box-shadow: 2px 2px 5px $shadow-grey;
   }
 }
 
 .day_current {
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: $orange;
 
   & .day__name {
@@ -26,7 +26,7 @@
 }
 
 .day_next {
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: $green;
 
   & .day__name {

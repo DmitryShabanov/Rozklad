@@ -6,6 +6,10 @@
     "start": "webpack-dev-server --config webpack/development.js",
     "build": "webpack --config webpack/production.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryShabanov/Rozklad.git"
+  },
   "author": "Dmitry",
   "license": "ISC",
   "dependencies": {
